@@ -15,7 +15,6 @@
       .form input {
         width: 200px;
       }
-
     </style>
   </head>
   <body>
@@ -28,17 +27,36 @@
     <!-- 입력 창 -->
     <form class="form">
       <label for="guessfield">추측 숫자를 입력하세요</label
-      ><input type="text" id="guessfield" /><input
+      ><input type="text" id="guessField" class="guessField" /><input
         type="submit"
         value="submit"
+        class="guessSubmit"
       />
     </form>
 
     <!-- 결과 창 -->
     <div class="resultParas">
-      <p class="quesses"></p>
+      <p class="guesses"></p>
       <p class="lastResult"></p>
       <p class="lowOrHigh"></p>
     </div>
+
+    <script>
+      // q1. 1-100까지의 랜덤한 숫자 (정수)를 반환하는 변수 randomNumber를 선언하고 초기화하세요
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+      // q2. DOM 요소 5가지를 선택해서 변수로 선언해주세요.
+      // guesses, lastResult, lowOrHigh, guessSubmit, guessField
+      const guesses = document.querySelector('.guesses');
+      const lastResult = document.querySelector('.lastResult');
+      const lowOrHigh = document.querySelector('.lowOrHigh');
+      const guessSubmit = document.querySelector('.guessSubmit');
+      const quessField = document.querySelector('.guessField');
+
+      // q3. 변수 2가지를 선언(let)해주세요.
+      // guessCount 초기값1, resetButton 선언만
+      let guessCount = 1;
+      let resetButton;
+    </script>
   </body>
 </html>
