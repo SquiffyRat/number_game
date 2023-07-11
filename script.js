@@ -42,6 +42,7 @@ function checkGuess(event) {
   // guessCount를 1 증가시킵니다
   // guessCount = guessCount + 1;
   guessCount++;
+  guessField.value = ''; // 인풋 태그 값 없애기
   // guessCount += 1;
 }
 
