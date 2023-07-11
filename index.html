@@ -74,7 +74,13 @@
           lastResult.textContent = 'Game Over';
           setGameOver();
         } else {
-          
+          // 플레이어에게 추측이 틀렸으며 값이 높거나 낮은지 알려줍니다.
+          lastResult.textContent = '추측값이 틀립니다.';
+          if (randomNumber > userGuess) {
+            lowOrHigh.textContent = '더 높은 값입니다';
+          } else {
+            lowOrHigh.textContent = '더 낮은 값입니다';
+          }
         }
         // guessCount를 1 증가시킵니다
         // guessCount = guessCount + 1;
