@@ -21,7 +21,7 @@ function checkGuess(event) {
   event.preventDefault();
   // 사용자가 추측한 번호를 알아내는 변수 userGuess
   const userGuess = Number(guessField.value);
-  // 제약사항 1 : 1~100 사이의 숫자로만 받기
+  // 제약사항 : 1~100 사이의 숫자로만 받기
 
   if (randomNumber === userGuess) {
     // 축하 메시지 표시
