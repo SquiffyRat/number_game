@@ -28,7 +28,7 @@
     <!-- 입력 창 -->
     <form class="form">
       <!-- 제약사항 추가 : 최소 1, 최대 100 -->
-      <label for="guessfield">추측 숫자를 입력하세요</label>
+      <label for="guessField">추측 숫자를 입력하세요</label>
       <input type="text" min="1" max="100" id="guessField" class="guessField" />
       <input type="submit" value="submit" class="guessSubmit" />
     </form>
@@ -91,7 +91,6 @@
       function setGameOver() {
         // 플레이어가 더 많은 추측을 입력할 수 없도록 합니다
         // 게임이 끝나는 로직
-        // setGameOver();
         // 추측창을 사용할 수 없게
         guessField.disabled = true;
         guessSubmit.disabled = true;
@@ -101,6 +100,20 @@
         resetButton.textContent = '새 게임하기';
         // 만든 DOM 버튼을 body태그 안에 추가합니다.
         document.body.appendChild(resetButton);
+        lowOrHigh.textContent = `값은 ${randomNumber}입니다.`;
+        // resetButton을 click했을 때 새 게임이 되게하는 리스너를 추가하기, 함수이름은 resetGame
+        resetButton.addEventListener('click', resetGame);
+      }
+
+      function resetGame() {
+        guessCount = 1;
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        resetButton.parentNode.removeChild(resetButton);
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        lowOrHigh.textContent = '';
+        guessField.value = '';
+        lastResult.textContent = '';
       }
       // 이벤트 리스너 만들기 click 했을 때 checkGuess 함수를 실행하는 리스너 추가
       guessSubmit.addEventListener('click', checkGuess);
